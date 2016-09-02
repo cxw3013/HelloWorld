@@ -31,7 +31,7 @@ class UIStudy extends Component {
             //第二步
             dataSource: ds,
             data: {
-                sectionHeader1: ['Android'],
+                section1: ['Android','777'],
                 sectionHeader2: ['IOS', 'React-Native'],
                 sectionHeader3: ['H5', 'JAVA', 'OC', 'Go', 'Swift'],
                 sectionHeader4: ['C', 'C++', 'C#', 'Python', 'PHP']
@@ -68,7 +68,7 @@ class UIStudy extends Component {
         //         {'数据内容: ' +rowDate + '\n组ID: ' + sectionID + '\n行ID: ' + rowID}
         //     </Text>
         // )
-        if (sectionID == 'sectionHeader1') {
+        if (sectionID == 'section1') {
             return (
                 <TouchableHighlight onPress={() => {this.pressRow(rowID)}}>
                     <Text style={styles.row}>
@@ -90,14 +90,14 @@ class UIStudy extends Component {
 
     renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
         return (
-            <View style={{height:1, backgroundColor:'blue'}}>
+            <View style={{height:10, backgroundColor:'blue'}}>
             </View>
         )
     }
 
     renderHeader() {
         return (
-            <View style={{backgroundColor:'#F2F0F9', height:60, justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{backgroundColor:'#F2F0F9', height:100, justifyContent: 'center', alignItems: 'flex-start'}}>
                 <Text style={{fontSize:30, color:'red' }}>
                     这是整个列表的头部
                 </Text>
@@ -118,8 +118,14 @@ class UIStudy extends Component {
     renderSectionHeader(sectionData, sectionID) {
         return (
             <View style={{backgroundColor:'#22F0F9', justifyContent: 'center', alignItems: 'flex-start'}}>
-                <Text style={{fontSize:20, color:'green' }}>
-                    {'组ID: ' + sectionID + '\n数据内容: ' + sectionData}
+                <Text style={{fontSize:20, color:'green' ,height:30,}}>
+                    {sectionData}
+                    {
+                        /*
+                         {'组ID: ' + sectionID + '\n数据内容: ' + sectionData}
+                         */
+                    }
+
                 </Text>
             </View>
         )
@@ -145,7 +151,7 @@ class UIStudy extends Component {
                            refreshing={this.state.isRefreshing}
                            onRefresh={this.onRefresh}
                            tintColor = "#FF0000"
-                           title = "Loading..."
+                           title = "jiazaizhong..."
                            titleColor="#00ff00"
                            />
                           }
